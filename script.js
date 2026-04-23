@@ -1,22 +1,22 @@
-// Smooth scroll
+// Smooth scroll helper
 function scrollToProjects() {
   document.getElementById("projects").scrollIntoView({
     behavior: "smooth"
   });
 }
 
-// Counter animation
+/* ===== COUNTERS ===== */
 const counters = document.querySelectorAll('.counter');
 
 counters.forEach(counter => {
   const update = () => {
     const target = +counter.getAttribute('data-target');
     const current = +counter.innerText;
-    const step = target / 100;
+    const step = target / 120;
 
     if (current < target) {
       counter.innerText = Math.ceil(current + step);
-      setTimeout(update, 20);
+      setTimeout(update, 15);
     } else {
       counter.innerText = target;
     }
@@ -24,18 +24,17 @@ counters.forEach(counter => {
   update();
 });
 
-// Scroll reveal animation
-const elements = document.querySelectorAll('.project-card, .stat-card, .about, .videos');
-
-const observer = new IntersectionObserver(entries => {
+/* ===== APPLE-STYLE SCROLL REVEAL ===== */
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('show');
     }
   });
+}, {
+  threshold: 0.15
 });
 
-elements.forEach(el => {
-  el.classList.add('fade');
+document.querySelectorAll('.fade').forEach(el => {
   observer.observe(el);
 });
