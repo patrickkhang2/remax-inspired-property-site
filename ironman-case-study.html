@@ -2,38 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ironman 70.3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ironman 70.3 — Patrick Khang</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<header>
-  <h1>Ironman 70.3</h1>
-  <a href="index.html">Home</a>
-</header>
+<div class="cursor"></div>
 
-<section class="hero fade">
-  <h2>Turned 22 & Completed Ironman 70.3</h2>
-  <p>Total Time: ~5h 45m</p>
+<!-- Nav -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Patrick<span>.</span></a>
+
+  <button class="nav-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#contact" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<!-- Case Hero -->
+<section class="case-hero">
+  <div class="case-hero-bg">
+    <img src="images/ironman.jpg" alt="Ironman finish"
+         onerror="this.style.display='none'">
+  </div>
+
+  <div class="section-label reveal"><span class="line"></span> Personal Project</div>
+  <h1 class="section-title reveal reveal-delay-1" style="font-size: clamp(40px, 6vw, 80px);">
+    Ironman 70.3
+  </h1>
+  <p class="section-sub reveal reveal-delay-2">
+    Turned 22 and completed Ironman 70.3. Endurance, discipline, and the mindset behind execution.
+  </p>
+
+  <div class="case-meta reveal reveal-delay-3">
+    <div class="case-meta-item">
+      <span>Distance</span>
+      <span>70.3 Miles</span>
+    </div>
+    <div class="case-meta-item">
+      <span>Total Time</span>
+      <span>~5h 45m</span>
+    </div>
+    <div class="case-meta-item">
+      <span>Age</span>
+      <span>22</span>
+    </div>
+    <div class="case-meta-item">
+      <span>Status</span>
+      <span>Completed ✓</span>
+    </div>
+  </div>
 </section>
 
-<section class="about fade">
-  <img src="images/ironman.jpg" alt="Ironman finish">
+<!-- Split Stats -->
+<section class="stats-section">
+  <div class="case-stats stagger-children" style="max-width: 800px; margin: 0 auto;">
+    <div class="case-stat">
+      <h3>41:05</h3>
+      <p>Swim — 1.9km</p>
+    </div>
+    <div class="case-stat">
+      <h3>2:47:38</h3>
+      <p>Bike — 90km</p>
+    </div>
+    <div class="case-stat">
+      <h3>2:16:25</h3>
+      <p>Run — 21.1km</p>
+    </div>
+  </div>
 </section>
 
-<section class="stats fade">
-  <div class="stat-card"><h3>41:05</h3><p>Swim</p></div>
-  <div class="stat-card"><h3>2:47:38</h3><p>Bike</p></div>
-  <div class="stat-card"><h3>2:16:25</h3><p>Run</p></div>
+<!-- Content -->
+<section class="case-content">
+  <h2 class="reveal">Why This Matters</h2>
+  <p class="reveal">
+    This isn't a marketing project — it's proof of what I bring to the table. 
+    Completing an Ironman 70.3 requires the same discipline, strategic planning, 
+    and execution that drives great marketing work.
+  </p>
+
+  <div class="case-image-full reveal">
+    <img src="images/ironman.jpg" alt="Ironman finish line"
+         onerror="this.parentElement.style.display='none'">
+  </div>
+
+  <h2 class="reveal">The Process</h2>
+  <p class="reveal">
+    Months of structured training. Early mornings. Nutrition planning. Mental preparation.
+    Every session was an investment in a goal that seemed impossible at the start.
+  </p>
+
+  <h2 class="reveal">The Mindset</h2>
+  <p class="reveal">
+    "I trained. I broke. I became." — The person who crosses that finish line isn't 
+    the same person who started training. That transformation is what I bring to 
+    every project, every campaign, every challenge.
+  </p>
 </section>
 
-<section class="about fade">
-  <p>I trained. I broke. I became.</p>
+<!-- Back CTA -->
+<section class="cta-section">
+  <h2 class="cta-title reveal">See More Work</h2>
+  <div class="cta-links reveal reveal-delay-1">
+    <a href="remax-case-study.html" class="cta-link">RE/MAX NZ →</a>
+    <a href="instagram-case-study.html" class="cta-link">Instagram →</a>
+    <a href="index.html" class="cta-link">All Projects →</a>
+  </div>
 </section>
 
 <footer>
-  <p>© 2026 Patrick Khang</p>
+  <p>© 2025 Patrick Khang. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/patrick-khang-445991215/" target="_blank">LinkedIn</a>
+    <a href="https://instagram.com/paddyk_travels" target="_blank">Instagram</a>
+  </div>
 </footer>
 
 <script src="script.js"></script>
