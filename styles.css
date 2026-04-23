@@ -80,6 +80,20 @@ nav a:hover {
   text-decoration: none;
 }
 
+.contact-links a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 18px;
+  background: #1e293b;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.contact-links a:hover {
+  background: #38bdf8;
+  color: black;
+}
+
 footer {
   text-align: center;
   padding: 20px;
