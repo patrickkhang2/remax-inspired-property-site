@@ -1,32 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+/* =========================
+   DESIGN SYSTEM
+========================= */
+
+:root {
+  --bg: #0b1220;
+  --panel: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.08);
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #7dd3fc;
+}
+
 /* =========================
    BASE
 ========================= */
 
 body {
   margin: 0;
-  font-family: Inter, sans-serif;
-  background: #0b1220;
-  color: #e5e7eb;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #0f172a, var(--bg));
+  color: var(--text);
 }
+
+/* subtle glow */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(125,211,252,0.08), transparent 40%),
+    radial-gradient(circle at 80% 40%, rgba(99,102,241,0.06), transparent 45%);
+  filter: blur(60px);
+  z-index: -1;
+}
+
+/* =========================
+   HEADER
+========================= */
 
 header {
   display: flex;
   justify-content: space-between;
   padding: 20px 60px;
-  background: rgba(11,18,32,0.6);
-  backdrop-filter: blur(20px);
   position: sticky;
   top: 0;
+  background: rgba(11,18,32,0.6);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 nav a {
-  color: #94a3b8;
+  color: var(--muted);
   margin-left: 20px;
   text-decoration: none;
+  transition: 0.2s;
 }
 
 nav a:hover {
-  color: #7dd3fc;
+  color: var(--accent);
 }
 
 /* =========================
@@ -39,17 +72,32 @@ nav a:hover {
 }
 
 .hero h2 {
-  font-size: 54px;
+  font-size: 52px;
+  font-weight: 800;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 12px auto;
+  color: var(--muted);
 }
 
 /* =========================
-   FADE SYSTEM
+   SECTIONS
+========================= */
+
+section {
+  padding: 100px 12%;
+}
+
+/* =========================
+   FADE (APPLE SMOOTH)
 ========================= */
 
 .fade {
   opacity: 0;
   transform: translateY(30px);
-  transition: 1s ease;
+  transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .fade.show {
@@ -58,60 +106,47 @@ nav a:hover {
 }
 
 /* =========================
+   GRID
+========================= */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.project-card,
+.stat-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 26px;
+  transition: 0.3s ease;
+}
+
+.project-card:hover,
+.stat-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(125,211,252,0.3);
+}
+
+/* =========================
    STATS
 ========================= */
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 80px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
 }
 
-.stat-card {
-  background: rgba(255,255,255,0.03);
-  padding: 30px;
-  border-radius: 16px;
-}
-
-/* =========================
-   PROJECTS
-========================= */
-
-.project-card {
-  background: rgba(255,255,255,0.03);
-  padding: 30px;
-  margin: 80px;
-  border-radius: 16px;
-}
-
-/* =========================
-   IG WALL (FIXED)
-========================= */
-
-.ig-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 80px;
-}
-
-.ig-card {
-  background: rgba(255,255,255,0.03);
-  padding: 24px;
-  border-radius: 18px;
-  transition: 0.3s;
-}
-
-.ig-card:hover {
-  transform: translateY(-6px);
-}
-
-.ig-thumb {
-  height: 200px;
-  border-radius: 14px;
-  background: linear-gradient(135deg,#1e293b,#0f172a);
-  margin-bottom: 16px;
+.stat-card h3 {
+  font-size: 34px;
+  color: var(--accent);
 }
 
 /* =========================
@@ -122,4 +157,23 @@ footer {
   text-align: center;
   padding: 60px;
   border-top: 1px solid rgba(255,255,255,0.08);
+  color: #64748b;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  header {
+    padding: 20px;
+  }
+
+  section {
+    padding: 80px 6%;
+  }
+
+  .hero h2 {
+    font-size: 36px;
+  }
 }
