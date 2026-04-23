@@ -149,6 +149,23 @@ section {
   color: var(--accent);
 }
 
+.section-subtext {
+  color: #94a3b8;
+  margin-top: 10px;
+  max-width: 600px;
+}
+
+.contact-links a {
+  display: inline-block;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+/* highlight card (your IG project) */
+.project-card.highlight {
+  border: 1px solid rgba(125,211,252,0.4);
+  background: rgba(125,211,252,0.05);
+}
 /* =========================
    FOOTER
 ========================= */
