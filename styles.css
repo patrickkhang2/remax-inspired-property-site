@@ -1,8 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 /* =========================
-   BASE
+   DESIGN SYSTEM (STRIPE CORE)
 ========================= */
+
+:root {
+  --bg: #0b1220;
+  --panel: rgba(255,255,255,0.03);
+  --border: rgba(255,255,255,0.08);
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #7dd3fc;
+  --accent2: #6366f1;
+}
 
 html {
   scroll-behavior: smooth;
@@ -11,170 +21,170 @@ html {
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  color: #e5e7eb;
-  background: radial-gradient(circle at top, #0f172a, #0b1220);
+  background: radial-gradient(circle at top, #0f172a, var(--bg));
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* =========================
-   HEADER
+   NAV (STRIPE CLEAN HEADER)
 ========================= */
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
-  background: rgba(15, 23, 42, 0.7);
-  backdrop-filter: blur(12px);
+  padding: 18px 72px;
   position: sticky;
   top: 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
   z-index: 100;
-}
-
-nav a {
-  margin-left: 20px;
-  color: #94a3b8;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #38bdf8;
+  background: rgba(11, 18, 32, 0.75);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
 }
 
 /* =========================
-   HERO
+   HERO (STRIPE LANDING STYLE)
 ========================= */
 
 .hero {
   text-align: center;
-  padding: 140px 20px;
+  padding: 180px 20px 120px;
   background: radial-gradient(circle at top, #1e293b, #0b1220);
+  position: relative;
 }
 
 .hero h2 {
-  font-size: 44px;
+  font-size: 60px;
   font-weight: 800;
+  letter-spacing: -0.04em;
 }
 
 .hero p {
-  color: #94a3b8;
-  max-width: 650px;
-  margin: 0 auto;
+  max-width: 760px;
+  margin: 18px auto 0;
+  font-size: 18px;
+  color: var(--muted);
 }
 
 /* =========================
-   SECTIONS
+   SECTION SYSTEM (STRIPE STORY FLOW)
 ========================= */
 
 section {
-  scroll-margin-top: 100px;
+  padding: 120px 14%;
 }
 
-.projects,
-.about,
-.videos,
-.contact {
-  padding: 80px 15%;
+/* alternating subtle structure like Stripe */
+section:nth-child(even) {
+  background: rgba(255,255,255,0.015);
 }
 
 /* =========================
-   BUTTONS
+   CTA STYLE
 ========================= */
 
-button {
-  margin-top: 20px;
+button, .cta {
+  margin-top: 18px;
   padding: 12px 26px;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #38bdf8, #6366f1);
-  color: white;
+  border-radius: 999px;
+  border: 1px solid var(--border);
   font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s ease;
 }
 
-button:hover {
-  transform: scale(1.05);
+button:hover, .cta:hover {
+  transform: translateY(-2px);
 }
 
 /* =========================
-   PROJECT GRID (SAAS STYLE)
+   STRIPE FEATURE BLOCKS
 ========================= */
 
-.project-grid {
+.feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
-.project-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 25px;
-  border-radius: 16px;
-  transition: transform 0.5s ease, border-color 0.5s ease;
+.feature-text h2 {
+  font-size: 36px;
+  letter-spacing: -0.03em;
 }
 
-.project-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(56,189,248,0.4);
+.feature-text p {
+  font-size: 17px;
+  color: var(--muted);
+}
+
+.feature-visual {
+  height: 320px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border: 1px solid var(--border);
 }
 
 /* =========================
-   STATS DASHBOARD
+   KPI STRIPE STYLE
 ========================= */
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  padding: 60px 15%;
 }
 
 .stat-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 30px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 34px;
   text-align: center;
-  transition: transform 0.5s ease, border-color 0.5s ease;
 }
 
 .stat-card h3 {
-  font-size: 34px;
-  color: #38bdf8;
+  font-size: 40px;
+  color: var(--accent);
 }
 
 /* =========================
-   VIDEO GRID
+   PROJECT / CASE STUDY GRID
 ========================= */
 
-.video-grid {
+.project-grid, .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
 }
 
-.video-grid iframe {
-  width: 100%;
-  height: 320px;
-  border-radius: 14px;
-  border: none;
+.project-card, .video-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 26px;
+  border-radius: 18px;
+  transition: 0.25s ease;
 }
 
-/* Video preview cards */
-.video-card {
-  position: relative;
-  overflow: hidden;
+.project-card:hover,
+.video-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(125,211,252,0.35);
 }
+
+/* =========================
+   VIDEO THUMBNAILS
+========================= */
 
 .thumbnail {
   height: 180px;
-  border-radius: 12px;
+  border-radius: 14px;
   background: linear-gradient(135deg, #1e293b, #0f172a);
-  margin-bottom: 15px;
+  margin-bottom: 14px;
   position: relative;
 }
 
@@ -189,14 +199,13 @@ button:hover {
 }
 
 /* =========================
-   FADE ANIMATION (FIXED)
+   STRIPE SCROLL REVEAL
 ========================= */
 
 .fade {
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.9s ease;
-  will-change: transform, opacity;
+  transform: translateY(24px);
+  transition: all 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .fade.show {
@@ -210,6 +219,29 @@ button:hover {
 
 footer {
   text-align: center;
-  padding: 40px;
+  padding: 80px;
+  border-top: 1px solid var(--border);
   color: #64748b;
+}
+
+/* =========================
+   RESPONSIVE (IMPORTANT)
+========================= */
+
+@media (max-width: 900px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid, .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    padding: 18px 24px;
+  }
 }
