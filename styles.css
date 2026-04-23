@@ -1,196 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
-
-/* =========================
-   DESIGN SYSTEM
-========================= */
-
-:root {
-  --bg: #0b1220;
-  --panel: rgba(255,255,255,0.04);
-  --border: rgba(255,255,255,0.08);
-  --text: #e5e7eb;
-  --muted: #94a3b8;
-  --accent: #7dd3fc;
-}
-
-/* =========================
-   BASE
-========================= */
-
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: radial-gradient(circle at top, #0f172a, var(--bg));
-  color: var(--text);
+  font-family: Arial;
+  background: #0b1220;
+  color: white;
 }
-
-/* subtle glow */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(125,211,252,0.08), transparent 40%),
-    radial-gradient(circle at 80% 40%, rgba(99,102,241,0.06), transparent 45%);
-  filter: blur(60px);
-  z-index: -1;
-}
-
-/* =========================
-   HEADER
-========================= */
 
 header {
   display: flex;
   justify-content: space-between;
-  padding: 20px 60px;
-  position: sticky;
-  top: 0;
-  background: rgba(11,18,32,0.6);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 20px;
+  background: #111;
 }
-
-nav a {
-  color: var(--muted);
-  margin-left: 20px;
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-nav a:hover {
-  color: var(--accent);
-}
-
-/* =========================
-   HERO
-========================= */
 
 .hero {
   text-align: center;
-  padding: 180px 20px;
+  padding: 100px;
 }
 
-.hero h2 {
-  font-size: 52px;
-  font-weight: 800;
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+  padding: 40px;
 }
 
-.hero p {
-  max-width: 600px;
-  margin: 12px auto;
-  color: var(--muted);
+.project-card {
+  background: #1f2937;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-/* =========================
-   SECTIONS
-========================= */
-
-section {
-  padding: 100px 12%;
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  padding: 40px;
+  gap: 20px;
 }
 
-/* =========================
-   FADE (APPLE SMOOTH)
-========================= */
+.stat-card {
+  background: #1f2937;
+  padding: 20px;
+  text-align: center;
+}
 
 .fade {
   opacity: 0;
-  transform: translateY(30px);
-  transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: translateY(20px);
+  transition: 0.6s;
 }
 
 .fade.show {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* =========================
-   GRID
-========================= */
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-}
-
-/* =========================
-   CARDS
-========================= */
-
-.project-card,
-.stat-card {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 26px;
-  transition: 0.3s ease;
-}
-
-.project-card:hover,
-.stat-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(125,211,252,0.3);
-}
-
-/* =========================
-   STATS
-========================= */
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
-}
-
-.stat-card h3 {
-  font-size: 34px;
-  color: var(--accent);
-}
-
-.section-subtext {
-  color: #94a3b8;
-  margin-top: 10px;
-  max-width: 600px;
-}
-
-.contact-links a {
-  display: inline-block;
-  margin-right: 20px;
-  margin-top: 10px;
-}
-
-/* highlight card (your IG project) */
-.project-card.highlight {
-  border: 1px solid rgba(125,211,252,0.4);
-  background: rgba(125,211,252,0.05);
-}
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-  text-align: center;
-  padding: 60px;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  color: #64748b;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 768px) {
-  header {
-    padding: 20px;
-  }
-
-  section {
-    padding: 80px 6%;
-  }
-
-  .hero h2 {
-    font-size: 36px;
-  }
 }
