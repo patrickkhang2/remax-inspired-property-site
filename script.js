@@ -12,6 +12,12 @@ const observer = new IntersectionObserver(
   { threshold: 0.2 }
 );
 
+function scrollToProjects() {
+  document.getElementById("projects").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
 document.querySelectorAll(".fade").forEach(el => observer.observe(el));
 
 /* COUNTER */
