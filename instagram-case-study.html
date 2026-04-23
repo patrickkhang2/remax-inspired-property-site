@@ -2,40 +2,144 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Instagram Case Study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Case Study — Patrick Khang</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<header>
-  <h1>@paddyk_travels</h1>
-  <a href="index.html">Home</a>
-</header>
+<div class="cursor"></div>
 
-<section class="hero fade">
-  <h2>30,000+ Views in 30 Days</h2>
-  <p>Organic short-form content strategy.</p>
+<!-- Nav -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Patrick<span>.</span></a>
+
+  <button class="nav-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#contact" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<!-- Case Hero -->
+<section class="case-hero">
+  <div class="case-hero-bg">
+    <img src="images/instagram-cover.jpg" alt="Instagram background"
+         onerror="this.style.display='none'">
+  </div>
+
+  <div class="section-label reveal"><span class="line"></span> Case Study</div>
+  <h1 class="section-title reveal reveal-delay-1" style="font-size: clamp(40px, 6vw, 80px);">
+    @paddyk_travels
+  </h1>
+  <p class="section-sub reveal reveal-delay-2">
+    Organic short-form content strategy that generated 30,000+ views in 30 days.
+  </p>
+
+  <div class="case-meta reveal reveal-delay-3">
+    <div class="case-meta-item">
+      <span>Timeline</span>
+      <span>30 Days</span>
+    </div>
+    <div class="case-meta-item">
+      <span>Platform</span>
+      <span>Instagram Reels</span>
+    </div>
+    <div class="case-meta-item">
+      <span>Result</span>
+      <span>30,000+ Views</span>
+    </div>
+    <div class="case-meta-item">
+      <span>Role</span>
+      <span>Creator & Strategist</span>
+    </div>
+  </div>
 </section>
 
-<section class="projects fade">
-  <div class="project-grid">
+<!-- Stats -->
+<section class="stats-section">
+  <div class="stats-grid stagger-children">
+    <div class="stat-item">
+      <h3 class="counter" data-target="30000" data-suffix="+">0</h3>
+      <p>Total Views</p>
+    </div>
+    <div class="stat-item">
+      <h3 class="counter" data-target="30" data-suffix=" Days">0</h3>
+      <p>Time Period</p>
+    </div>
+    <div class="stat-item">
+      <h3>100%</h3>
+      <p>Organic Reach</p>
+    </div>
+    <div class="stat-item">
+      <h3>Reels</h3>
+      <p>Format</p>
+    </div>
+  </div>
+</section>
 
-    <div class="project-card">
-      <h3>Reel 1</h3>
-      <a href="https://www.instagram.com/reel/DOR704JiuyF/" target="_blank">Watch →</a>
+<!-- Content -->
+<section class="case-content">
+  <h2 class="reveal">The Challenge</h2>
+  <p class="reveal">
+    Growing an organic following from scratch on a platform dominated by paid promotion 
+    and established creators. The goal: prove that strategic, authentic content could 
+    break through the noise without a single dollar spent on ads.
+  </p>
+
+  <h2 class="reveal">The Strategy</h2>
+  <p class="reveal">
+    Every piece of content was built around a clear framework: hook within the first second, 
+    deliver value in the middle, and close with a reason to follow. I studied trending audio, 
+    optimal posting times, and audience behavior to maximize algorithmic distribution.
+  </p>
+
+  <h2 class="reveal">The Reels</h2>
+
+  <div class="reels-grid">
+    <div class="reel-card reveal">
+      <div class="reel-card-overlay">
+        <h3>Reel 1</h3>
+        <a href="https://www.instagram.com/reel/DOR704JiuyF/" target="_blank">Watch Reel →</a>
+      </div>
     </div>
 
-    <div class="project-card">
-      <h3>Reel 2</h3>
-      <a href="https://www.instagram.com/reel/DRJMq1riL6u/" target="_blank">Watch →</a>
+    <div class="reel-card reveal reveal-delay-1">
+      <div class="reel-card-overlay">
+        <h3>Reel 2</h3>
+        <a href="https://www.instagram.com/reel/DRJMq1riL6u/" target="_blank">Watch Reel →</a>
+      </div>
     </div>
+  </div>
 
+  <h2 class="reveal">Key Takeaways</h2>
+  <p class="reveal">
+    Consistency beats virality. Showing up every day with intentional content builds 
+    momentum that compounds. The algorithm rewards creators who understand their audience 
+    and respect the platform's mechanics.
+  </p>
+</section>
+
+<!-- Back CTA -->
+<section class="cta-section">
+  <h2 class="cta-title reveal">See More Work</h2>
+  <div class="cta-links reveal reveal-delay-1">
+    <a href="remax-case-study.html" class="cta-link">RE/MAX NZ →</a>
+    <a href="ironman-case-study.html" class="cta-link">Ironman 70.3 →</a>
+    <a href="index.html" class="cta-link">All Projects →</a>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Patrick Khang</p>
+  <p>© 2025 Patrick Khang. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/patrick-khang-445991215/" target="_blank">LinkedIn</a>
+    <a href="https://instagram.com/paddyk_travels" target="_blank">Instagram</a>
+  </div>
 </footer>
 
 <script src="script.js"></script>
