@@ -1,11 +1,13 @@
-/* =========================
-   APPLE PRODUCT LAUNCH SYSTEM
-========================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* =========================
+   DESIGN SYSTEM
+========================= */
 
 :root {
   --bg: #0b1220;
+  --panel: rgba(255,255,255,0.03);
+  --border: rgba(255,255,255,0.08);
   --text: #e5e7eb;
   --muted: #94a3b8;
   --accent: #7dd3fc;
@@ -25,9 +27,10 @@ body {
   background: radial-gradient(circle at top, #0f172a, var(--bg));
   color: var(--text);
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
-/* atmospheric light field */
+/* atmospheric cinematic glow */
 body::before {
   content: "";
   position: fixed;
@@ -41,7 +44,7 @@ body::before {
 }
 
 /* =========================
-   HEADER (APPLE GLASS)
+   HEADER
 ========================= */
 
 header {
@@ -55,13 +58,12 @@ header {
   background: rgba(11, 18, 32, 0.55);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
-  transition: all 0.4s ease;
 }
 
 nav a {
   margin-left: 18px;
-  color: var(--muted);
   text-decoration: none;
+  color: var(--muted);
   transition: 0.2s;
 }
 
@@ -70,7 +72,7 @@ nav a:hover {
 }
 
 /* =========================
-   HERO (KEYNOTE MOMENT)
+   HERO (APPLE KEYNOTE STYLE)
 ========================= */
 
 .hero {
@@ -79,7 +81,7 @@ nav a:hover {
 }
 
 .hero h2 {
-  font-size: 68px;
+  font-size: 64px;
   font-weight: 800;
   letter-spacing: -0.04em;
 }
@@ -92,20 +94,19 @@ nav a:hover {
 }
 
 /* =========================
-   SECTION FLOW (LAUNCH STORY)
+   SECTIONS (LAUNCH FLOW)
 ========================= */
 
 section {
   padding: 140px 14%;
 }
 
-/* alternating cinematic rhythm */
 section:nth-child(even) {
   background: rgba(255,255,255,0.015);
 }
 
 /* =========================
-   APPLE REVEAL (KEYNOTE TIMING)
+   FADE ANIMATION (CINEMATIC)
 ========================= */
 
 .fade {
@@ -120,29 +121,22 @@ section:nth-child(even) {
 }
 
 /* =========================
-   CARDS (ULTRA MINIMAL)
+   STATS (APPLE DASHBOARD STYLE)
 ========================= */
 
-.project-card,
-.stat-card,
-.video-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
   border-radius: 18px;
-  padding: 28px;
-  transition: 0.3s ease;
+  padding: 34px;
+  text-align: center;
 }
-
-.project-card:hover,
-.stat-card:hover,
-.video-card:hover {
-  border-color: rgba(125,211,252,0.3);
-  transform: translateY(-4px);
-}
-
-/* =========================
-   KPI (PRODUCT STATS STYLE)
-========================= */
 
 .stat-card h3 {
   font-size: 44px;
@@ -150,34 +144,93 @@ section:nth-child(even) {
 }
 
 /* =========================
-   VIDEO PREVIEW STYLE
+   PROJECT / CONTENT CARDS
 ========================= */
 
-.thumbnail {
-  height: 180px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-  margin-bottom: 14px;
-  position: relative;
+.project-card,
+.video-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 26px;
+  transition: 0.3s ease;
 }
 
+.project-card:hover,
+.video-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(125,211,252,0.3);
+}
+
+/* =========================
+   INSTAGRAM SECTION (FIXED + APPLE STYLE)
+========================= */
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* clickable IG preview card */
+.video-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* fake “video preview” (reliable + Apple-style) */
+.thumbnail {
+  height: 240px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 14px;
+  transition: 0.3s ease;
+}
+
+/* play icon */
 .thumbnail::after {
   content: "▶";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 28px;
-  color: rgba(255,255,255,0.6);
+  font-size: 30px;
+  color: rgba(255,255,255,0.7);
+}
+
+/* hover zoom feel */
+.video-card:hover .thumbnail {
+  transform: scale(1.02);
+  filter: brightness(1.1);
 }
 
 /* =========================
-   FOOTER (CLEAN EXIT)
+   FOOTER
 ========================= */
 
 footer {
   text-align: center;
   padding: 80px;
-  color: #64748b;
   border-top: 1px solid rgba(255,255,255,0.08);
+  color: #64748b;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  header {
+    padding: 18px 24px;
+  }
+
+  .hero h2 {
+    font-size: 42px;
+  }
+
+  section {
+    padding: 100px 8%;
+  }
 }
